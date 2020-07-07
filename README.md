@@ -1,5 +1,5 @@
 # pycachecleaner
-smol thing to kill __pycache__.
+smol thing to kill \_\_pycache\_\_.<br/>
 (you can use python -B ... in future)
 
 # installation
