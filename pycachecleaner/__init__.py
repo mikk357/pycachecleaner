@@ -1,0 +1,1 @@
+from .pycachecleaner import clean
