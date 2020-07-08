@@ -1,6 +1,5 @@
 import shutil
 import os
-import time
 
 
 def _delete(files):
@@ -31,7 +30,6 @@ def _search(directory: str):
 
 
 def clean(directory: str, autoagree: bool = False):
-    _ts = time.time()
     _to_delete = _search(directory)
     if _to_delete:
         if autoagree:
@@ -49,8 +47,3 @@ def clean(directory: str, autoagree: bool = False):
                 print("Canceled.")
     else:
         print(f"Not finded __pycache__ folders.")
-
-
-
-
-
