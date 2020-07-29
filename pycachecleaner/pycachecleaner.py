@@ -1,8 +1,9 @@
 import shutil
 import os
+from typing import Iterable, Set
 
 
-def _delete(files):
+def _delete(files: Iterable[str]):
     for path in files:
         shutil.rmtree(
             path,
@@ -10,11 +11,11 @@ def _delete(files):
         )
 
 
-def _search(directory: str):
+def _search(directory: str) -> Set[str]:
     """ Рекурсивный поиск  """
-    out: set = set()
+    out: Set[str] = set()
     try:
-        objects: set = set(os.listdir(directory))
+        objects = os.listdir(directory)
         for i in objects:
             path = os.path.join(directory, i)
             if not os.path.isdir(path):
@@ -46,4 +47,4 @@ def clean(directory: str, autoagree: bool = False):
             else:
                 print("Canceled.")
     else:
-        print(f"Not finded __pycache__ folders.")
+        print("Not finded __pycache__ folders.")
